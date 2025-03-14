@@ -1,0 +1,85 @@
+custom-dropdown-menu {
+	display: none;
+}
+@media screen and (min-width:992px) {
+    custom-dropdown-menu {
+	    display: block;
+        ul {
+            list-style: none;
+        }
+    }
+    .custom-dropdown-menu {
+        position: relative;
+        display: flex;
+        gap: 20px;
+    }
+    .dropdown-item {
+        position: relative;
+        a {
+            text-decoration: none;
+            color: rgb(43, 36, 36);
+            padding: 5px 15px;
+            display: flex;
+            align-items: center;
+        }
+        .icon-caret {
+            margin-left: 3px;
+            transition: transform 0.3s ease;
+            width: 12px;
+        }
+        &:hover .icon-caret .icon-caret {
+            transform: rotate(180deg);
+        }
+        &:hover > .dropdown-level-2 {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+    }
+    .dropdown-level-2 .dropdown-item > a, .dropdown-level-2 .dropdown-item  h3 {
+        font-weight: bold;
+        text-decoration: underline;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+    .dropdown-level-2 .dropdown-item > a {
+        padding: 0;
+    }
+    .dropdown-level-2 .dropdown-item h3 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        margin: 0;
+    }
+    .dropdown-level-2, .dropdown-level-3 {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        background: white;
+        box-shadow: 0 4px 6px rgba(43, 36, 36, 0.1);
+        padding: 10px;
+        min-width: 200px;
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    }
+    .dropdown-level-2 {
+        top: 100%;
+        left: 0;
+        transform: translateY(-10px);
+        .dropdown-item:hover > .dropdown-level-3 {
+            opacity: 1;
+            transform: translateX(0);
+            visibility: visible;
+        }
+    }
+    .dropdown-level-3 {
+        top: 0;
+        left: 100%;
+        transform: translateX(-10px);
+        a:hover {
+            font-weight: 500;
+            transition: 0.5s all;
+        }
+    }
+    
+}

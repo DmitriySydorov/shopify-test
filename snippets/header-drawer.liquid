@@ -50,6 +50,7 @@
                             {{ link.title | escape }}
                           </button>
                           <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                        
                             {%- for childlink in link.links -%}
                               <li>
                                 {%- if childlink.links == blank -%}
@@ -95,7 +96,8 @@
                                         role="list"
                                         tabindex="-1"
                                       >
-                                        {%- for grandchildlink in childlink.links -%}
+                                        {%- assign childlinklinklinksAZ = childlink.links | sort: "title" -%}
+                                        {%- for grandchildlink in childlinklinklinksAZ -%}
                                           <li>
                                             <a
                                               id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
@@ -108,6 +110,16 @@
                                               {{ grandchildlink.title | escape }}
                                             </a>
                                           </li>
+                                          {% if forloop.last %}
+                                            <li>
+                                              <a 
+                                                href="{{ sublink.url }}"
+                                                class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
+                                              >
+                                                <i>Shop All</i>
+                                              </a>
+                                            </li>
+                                          {% endif %}
                                         {%- endfor -%}
                                       </ul>
                                     </div>

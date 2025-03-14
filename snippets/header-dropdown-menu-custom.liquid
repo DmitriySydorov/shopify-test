@@ -1,0 +1,52 @@
+{{ 'header-dropdown-menu-custom.scss' | asset_url | stylesheet_tag }}
+
+<custom-dropdown-menu>
+  <ul class="custom-dropdown-menu">
+    {% for link in linklists.main-menu.links %}
+      <li class="dropdown-item">
+        <a href="{{ link.url }}">
+          <h3>{{ link.title }}</h3>
+          {% if link.links != blank %}
+            <span class="icon-caret" style="display: inline-block;">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          {% endif %}
+        </a>
+        {% if link.links != blank %}
+          <ul class="dropdown-level-2">
+            {% for sublink in link.links %}
+              <li class="dropdown-item">
+                {%- if sublink.links != blank -%}
+                  <h3>{{ sublink.title }}
+                  {% if sublink.links != blank %}
+                    <span style="display: inline-block; transform: rotate(-90deg);">
+                      {{- 'icon-caret.svg' | inline_asset_content -}}
+                    </span>
+                  {% endif %}
+                  </h3>
+                {%- else -%}
+                  <a href="{{ sublink.url }}"><h3>{{ sublink.title }}</h3></a>
+                {%- endif -%}
+                {% if sublink.links != blank %}
+                  <ul class="dropdown-level-3">
+                    {%- assign sublinklinksAZ = sublink.links | sort: "title" -%}
+                    {% for sub_sublink in sublinklinksAZ %}
+                      <li><a href="{{ sub_sublink.url }}">{{ sub_sublink.title }}</a></li>
+                      {% if forloop.last %}
+                        <li>
+                          <a href="{{ sublink.url }}">
+                            <i>Shop All</i>
+                          </a>
+                        </li>
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</custom-dropdown-menu>
