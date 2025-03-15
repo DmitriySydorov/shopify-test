@@ -3,7 +3,7 @@
 }
 
 .rating {
-  display: inline-block;
+  display: flex;
   margin: 0;
 }
 
