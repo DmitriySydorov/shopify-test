@@ -116,10 +116,32 @@
             "date": "12/01/2025",
             "stars": 5
           }
+        },
+        "testimonial_TyfDcy": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/model-with-leather-jacket-over-shoulders.jpg",
+            "name": "Full name",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            "date": "12/01/2025",
+            "stars": 5
+          }
+        },
+        "testimonial_FEM8NP": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/model-with-leather-jacket-over-shoulders.jpg",
+            "name": "Full name",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "date": "12/01/2025",
+            "stars": 5
+          }
         }
       },
       "block_order": [
-        "testimonial_WwYqTj"
+        "testimonial_WwYqTj",
+        "testimonial_TyfDcy",
+        "testimonial_FEM8NP"
       ],
       "settings": {
         "title": "Testimonials",
