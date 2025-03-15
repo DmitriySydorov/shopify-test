@@ -1,0 +1,124 @@
+
+
+.featured-products-custom {
+    .collection__title {
+        text-align: center;
+        .title {
+            font-weight: 600;
+            letter-spacing: 0px;
+        }
+        .subtitle  {
+            max-width: 564px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0.65px;
+            text-align: center;
+            margin: 0 auto 25px;
+        }
+        .link {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 100%;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            position: relative;
+            margin-bottom: 53px;
+            &::after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                border-bottom: 2px solid #000;
+                width: 100%;
+                left: 0;
+                bottom: -10px;
+            }
+        }
+    }
+    .caption-with-letter-spacing  {
+        font-family: 'Tiempos Headline';
+        color: #685A5C;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        margin-bottom: 8px;
+        text-transform: capitalize;
+    }
+    .card__heading {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        margin-bottom: 20px;
+    }
+    .price {
+        display: flex;
+        justify-content: space-between;
+        .price__container {
+            color: #685A5C;
+            font-weight: 600;
+        }
+    }
+    .rating {
+        display: flex;
+        align-items: center;
+      }
+      .star {
+        width: 16px;
+        height: 16px;
+        fill: #231f20;
+      }
+      .star.half {
+        fill: #b3a9a9;
+      }
+      .reviews {
+        margin-left: 8px;
+        margin-top: 2px;
+        font-size: 11px;
+        color: #807878;
+        font-weight: bold;
+      }
+    .quick-add__submit {
+        border: 1px solid #D9D6D6;
+        border-radius: 5px;
+        span {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 100%;
+            letter-spacing: 0.5px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #8E8385;
+        }
+        &:hover {
+            border: 1px solid #807878;
+            color: #807878;
+        }
+    }
+
+    .button:before,
+    .button:after,
+    .button:not([disabled]):hover:after {
+        box-shadow: none;
+    }
+    .hxl {
+        font-size: calc(var(--font-heading-scale)* 3.5rem);
+    }
+}
+
+@media screen and (min-width:768px) {
+    .featured-products-custom {
+        .collection__title {
+            .subtitle  {
+                font-size: 14px;
+            }
+
+        }
+        .hxl {
+            font-size: calc(var(--font-heading-scale)* 5rem);
+        }
+    }
+}
